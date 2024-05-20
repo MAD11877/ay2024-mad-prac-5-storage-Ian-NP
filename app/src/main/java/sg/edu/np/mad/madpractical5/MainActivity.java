@@ -42,38 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         MyDBHandler dbHandler = new MyDBHandler(this, null, null, 1);
 
-
-
-//        for (int i = 0; i < 10; i++) {
-//            String name = "Name" + new Random().nextInt(999999999);
-//            String description = "Description" + new Random().nextInt(999999999);
-//            boolean followed = new Random().nextBoolean();
-//
-//            User user = new User(1, name, description, followed);
-//            dbHandler.addUser(user);
-//        }
-
         userList = dbHandler.getUsers();
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-        for (User user : userList) {
-            db.collection("users")
-                    .add(user)
-                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                        @Override
-                        public void onSuccess(DocumentReference documentReference) {
-                            // Show success toast
-                            Toast.makeText(getApplicationContext(), "User added successfully", Toast.LENGTH_SHORT).show();
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            // Show failure toast
-                            Toast.makeText(getApplicationContext(), "Failed to add user: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    });
-        }
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(this, userList);
         recyclerView.setAdapter(recyclerViewAdapter);
