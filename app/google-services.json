@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "876402651455",
+    "firebase_url": "https://practical-5-81730-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "practical-5-81730",
+    "storage_bucket": "practical-5-81730.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876402651455:android:67c447b4899799bef5a38a",
+        "android_client_info": {
+          "package_name": "sg.edu.np.mad.madpractical5"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvEbvqS8UGS7QhS6tv89XHckzhsKIFJMk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
