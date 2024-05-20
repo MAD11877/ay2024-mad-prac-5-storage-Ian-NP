@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         userList = dbHandler.getUsers();
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
-        UserAdapter userAdapter = new UserAdapter(this, userList);
+        UserAdapter userAdapter = new UserAdapter(userList, this);
         recyclerView.setAdapter(userAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
     }
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         DatabaseHandler dbHandler = new DatabaseHandler(this, null, null, 1);
         userList = dbHandler.getUsers();
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
-        UserAdapter userAdapter = new UserAdapter(this, userList);
+        UserAdapter userAdapter = new UserAdapter(userList, this);
         recyclerView.setAdapter(userAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
     }
