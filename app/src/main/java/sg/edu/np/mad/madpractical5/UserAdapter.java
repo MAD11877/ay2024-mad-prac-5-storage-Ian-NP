@@ -5,7 +5,6 @@ import static androidx.core.content.ContextCompat.startActivity;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -18,30 +17,29 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>{
+public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder>{
 
     Context context;
     List<User> userList;
 
-    public RecyclerViewAdapter(Context context, List<User> userList){
+    public UserAdapter(Context context, List<User> userList){
         this.context = context;
         this.userList = userList;
     }
 
     @NonNull
     @Override
-    public RecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public UserAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.recyclerview, parent, false);
 
-        return new RecyclerViewAdapter.MyViewHolder(view, userList);
+        return new UserAdapter.MyViewHolder(view, userList);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerViewAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull UserAdapter.MyViewHolder holder, int position) {
         // assigning values to views (rows) created in the recycler_view_row layout file
         // based on the position of the recycler view
 

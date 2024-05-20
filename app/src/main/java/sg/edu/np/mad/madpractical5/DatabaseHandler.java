@@ -11,9 +11,8 @@ import java.util.List;
 
 import android.database.sqlite.SQLiteException;
 import android.util.Log;
-import android.widget.ArrayAdapter;
 
-public class MyDBHandler extends SQLiteOpenHelper {
+public class DatabaseHandler extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "myusers.db";
     private static final String USERS = "users";
@@ -22,7 +21,7 @@ public class MyDBHandler extends SQLiteOpenHelper {
     private static final String COLUMN_DESCRIPTION = "description";
     private static final String COLUMN_FOLLOWED = "followed";
 
-    public MyDBHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version){
+    public DatabaseHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version){
         super(context, DATABASE_NAME, factory, DATABASE_VERSION);
     }
 
@@ -76,7 +75,7 @@ public class MyDBHandler extends SQLiteOpenHelper {
                 String name = cursor.getString((int)cursor.getColumnIndex(COLUMN_NAME));
                 String description = cursor.getString((int)cursor.getColumnIndex(COLUMN_DESCRIPTION));
                 boolean followed = cursor.getInt((int)cursor.getColumnIndex(COLUMN_FOLLOWED)) == 1;
-                User user = new User(id, name, description, followed);
+                User user = new User(name, description, id, followed);
                 userList.add(user);
             } while (cursor.moveToNext());
         }

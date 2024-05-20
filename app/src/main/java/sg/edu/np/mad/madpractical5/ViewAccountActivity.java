@@ -26,7 +26,7 @@ public class ViewAccountActivity extends AppCompatActivity {
             return insets;
         });
 
-        MyDBHandler dbHandler = new MyDBHandler(this, null, null, 1);
+        DatabaseHandler dbHandler = new DatabaseHandler(this, null, null, 1);
 
         Intent receivingEnd = getIntent();
         int id = receivingEnd.getIntExtra("userId", -1);
@@ -34,7 +34,7 @@ public class ViewAccountActivity extends AppCompatActivity {
         String description = receivingEnd.getStringExtra("userDesc");
         boolean followed = receivingEnd.getBooleanExtra("userFollowed", false);
 
-        User clickedUser = new User(id, name, description, followed);
+        User clickedUser = new User(name, description, id, followed);
 
         TextView tvName = findViewById(R.id.tvName);
         TextView tvDescription = findViewById(R.id.tvDescription);

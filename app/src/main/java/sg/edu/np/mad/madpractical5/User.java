@@ -13,7 +13,7 @@ public class User {
     public String getName() { return name; }
     public String getDescription() {return description;}
     public boolean getFollowed() { return followed; }
-    public User(int id, String name, String description, boolean followed){
+    public User(String name, String description, int id, boolean followed){
         this.id = id;
         this.name = name;
         this.description = description;
